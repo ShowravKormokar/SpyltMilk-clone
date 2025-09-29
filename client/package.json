@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.13",
     "gsap": "^3.13.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-responsive": "^10.0.1",
     "react-router-dom": "^7.9.3",
     "remixicon": "^4.6.0",
     "tailwindcss": "^4.1.13"
