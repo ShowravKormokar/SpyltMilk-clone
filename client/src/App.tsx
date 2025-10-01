@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import HeroSection from "./sections/HeroSection"
 import gsap from "gsap";
 import MessageSection from "./sections/MessageSection";
+import FlavorSection from "./sections/FlavorSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,7 @@ const App = () => {
             <Navbar />
             <HeroSection />
             <MessageSection />
+            <FlavorSection />
             <div className="h-dvh border border-red-400"></div>
         </main>
     )

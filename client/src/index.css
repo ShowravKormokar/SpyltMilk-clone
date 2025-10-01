@@ -137,7 +137,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    /* .flavor-section {
+    .flavor-section {
         @apply min-h-dvh bg-milk;
 
         .flavor-text-scroll {
@@ -173,7 +173,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    .nutrition-section {
+    /* .nutrition-section {
         @apply min-h-dvh 2xl:h-[120dvh] overflow-hidden relative;
 
         .big-img {
