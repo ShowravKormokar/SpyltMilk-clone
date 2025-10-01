@@ -142,6 +142,7 @@ body::-webkit-scrollbar {
 
         .flavor-text-scroll {
             @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-milk absolute z-10;
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
         }
 
         .first-text-split h1 {
