@@ -27,8 +27,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #000; */
-    background-color: #faeade;
+    background-color: #000;
+    /* background-color: #faeade; */
     color: #523122;
     font-family: "Antonio", sans-serif;
     overflow-x: hidden;
@@ -138,7 +138,7 @@ body::-webkit-scrollbar {
     }
 
     .flavor-section {
-        @apply min-h-dvh bg-milk;
+        @apply min-h-full p-0 m-0 bg-milk;
 
         .flavor-text-scroll {
             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -157,10 +157,10 @@ body::-webkit-scrollbar {
         }
 
         .slider-wrapper {
-            @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 md:mt-20 xl:mt-0;
+            /* @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 xl:mt-0; */
 
             .flavors {
-                @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
+                /* @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap; */
 
                 .drinks {
                     @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-full h-80;

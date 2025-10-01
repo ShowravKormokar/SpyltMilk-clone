@@ -21,7 +21,7 @@ const FlavorSlider = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".flavor-section",
-                    start: "top -13%",
+                    start: "top 0%",
                     end: "+=5000",
                     scrub: true,
                     pin: true,
@@ -30,7 +30,7 @@ const FlavorSlider = () => {
             });
 
             tl.to(".flavor-section", {
-                x: `-${scrollAmount + 1000}px`,
+                x: `-${4000 + 1000}px`,
                 ease: "power1.inOut",
             });
         }
@@ -93,8 +93,8 @@ const FlavorSlider = () => {
     });
 
     return (
-        <div ref={slideRef} className="slider-wrapper">
-            <div className="flavors">
+        <div ref={slideRef} className="slider-wrapper lg:w-[480vw] lg:h-full mt-0 xl:mt-0 bg-milk">
+            <div className="flavors h-full flex md:flex-row flex-col items-center lg:items-start lg:pt-10 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap">
                 {flavorlists.map((flavor) => (
                     <div
                         key={flavor.name}
