@@ -27,8 +27,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #000;
-    /* background-color: #faeade; */
+    /* background-color: #000; */
+    background-color: #faeade;
     color: #523122;
     font-family: "Antonio", sans-serif;
     overflow-x: hidden;
@@ -141,8 +141,11 @@ body::-webkit-scrollbar {
         @apply min-h-dvh bg-milk;
 
         .flavor-text-scroll {
-            @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-milk absolute z-10;
             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+
+        .flavor-text-scroll {
+            @apply rotate-[-3deg] md:translate-y-5 border-[.5vw] border-milk absolute z-10;
         }
 
         .first-text-split h1 {
@@ -168,7 +171,7 @@ body::-webkit-scrollbar {
                 }
 
                 h1 {
-                    @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-6xl text-3xl font-semibold uppercase tracking-tighter;
+                    @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-4xl text-3xl font-semibold uppercase tracking-tighter;
                 }
             }
         }
