@@ -25,12 +25,12 @@ const FlavorSlider = () => {
                     end: "+=5000",
                     scrub: true,
                     pin: true,
-                    markers: true
+                    // markers: true
                 },
             });
 
             tl.to(".flavor-section", {
-                x: `-${4000 + 1000}px`,
+                x: `-${scrollAmount + 1100}px`,
                 ease: "power1.inOut",
             });
         }
