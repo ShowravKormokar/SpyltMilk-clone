@@ -1,3 +1,4 @@
+import { nutrientLists } from "../constants/details"
 
 const NutritionSection = () => {
     return (
@@ -26,9 +27,26 @@ const NutritionSection = () => {
 
 
 
-            {/* <div className="nutrition-box">
-
-            </div> */}
+            <div className="nutrition-box">
+                <div className="list-wrapper">
+                    {
+                        nutrientLists.map((nutrients, index) => (
+                            <div key={index} className="relative flex-1 col-center">
+                                <div className="">
+                                    <p className="md:text-lg font-paragraph">{nutrients.label}</p>
+                                    <p className="font-paragraph text-sm mt-2">up to</p>
+                                    <p className="text-2xl md:text-2xl tracking-tighter font-bold">{nutrients.amount}</p>
+                                </div>
+                                {
+                                    index !== nutrientLists.length - 1 && (
+                                        <div className="spacer-border" />
+                                    )
+                                }
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
         </section>
     )
 }
