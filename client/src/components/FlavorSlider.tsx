@@ -22,7 +22,7 @@ const FlavorSlider = () => {
                 scrollTrigger: {
                     trigger: ".flavor-section",
                     start: "top 0%",
-                    end: "+=5000",
+                    end: "+=4000",
                     scrub: true,
                     pin: true,
                     // markers: true
@@ -30,7 +30,7 @@ const FlavorSlider = () => {
             });
 
             tl.to(".flavor-section", {
-                x: `-${scrollAmount + 1100}px`,
+                x: `-${scrollAmount}px`,
                 ease: "power1.inOut",
             });
         }
