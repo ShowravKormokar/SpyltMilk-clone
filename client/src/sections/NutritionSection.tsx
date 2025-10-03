@@ -2,8 +2,13 @@ import { useGSAP } from "@gsap/react"
 import { nutrientLists } from "../constants/details"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
+import { useMediaQuery } from "react-responsive"
 
 const NutritionSection = () => {
+
+    const isMobile = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
 
     useGSAP(() => {
         const headingSplit = SplitText.create(".h1-animate", { type: "chars" });
@@ -42,7 +47,7 @@ const NutritionSection = () => {
             <img src="/images/big-img.png" alt="" className="big-img" />
             <div className="flex flex-col justify-center">
                 <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
-                    <div className="relative inline-block md:translate-y-20">
+                    <div className="relative inline-block md:translate-y-20 z-100">
                         <div className="general-title relative flex flex-col justify-center items-center gap-24">
                             <div className="overflow-hidden place-self-start h1-animate">
                                 <h1>It still does</h1>
@@ -54,8 +59,8 @@ const NutritionSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex md:justify-end items-start translate-y-20">
-                        <div className="md:max-w-xs max-w-md">
+                    <div className="flex md:justify-end items-start md:translate-y-20 translate-y-10">
+                        <div className="md:max-w-xs w-[70%]">
                             <p className="text-sm md:text-right text-balance font-paragraph para-animate">Milk contains a wide array of nutrients including vitamins, minerals, and proteins and that is lactose free.</p>
                         </div>
                     </div>
@@ -64,7 +69,7 @@ const NutritionSection = () => {
                 <div className="nutrition-box">
                     <div className="list-wrapper">
                         {
-                            nutrientLists.map((nutrients, index) => (
+                            (isMobile ? nutrientLists.slice(0, 3) : nutrientLists).map((nutrients, index, arr) => (
                                 <div key={index} className="relative flex-1 col-center">
                                     <div className="">
                                         <p className="md:text-sm font-paragraph">{nutrients.label}</p>
@@ -72,7 +77,7 @@ const NutritionSection = () => {
                                         <p className="text-2xl md:text-2xl tracking-tighter font-bold">{nutrients.amount}</p>
                                     </div>
                                     {
-                                        index !== nutrientLists.length - 1 && (
+                                        index !== arr.length - 1 && (
                                             <div className="spacer-border" />
                                         )
                                     }

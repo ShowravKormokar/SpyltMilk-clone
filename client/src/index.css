@@ -178,7 +178,7 @@ body::-webkit-scrollbar {
     }
 
     .nutrition-section {
-        @apply min-h-[120vh] 2xl:h-[120dvh] overflow-hidden relative z-10;
+        @apply md:min-h-[120vh] min-h-dvh 2xl:h-[120dvh] overflow-hidden relative z-10;
 
         .big-img {
             @apply w-full absolute 2xl:h-full md:h-auto h-1/2 left-0 bottom-0 object-bottom 2xl:object-contain object-cover;
@@ -186,7 +186,7 @@ body::-webkit-scrollbar {
 
         .nutrition-title {
             @apply 2xl:max-w-4xl xl:max-w-2xl md:py-0 py-3 md:pb-5 pb-0 lg:pb-0 md:text-center text-[#513022];
-        }
+        }   
 
         .nutrition-text-scroll {
             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -197,10 +197,10 @@ body::-webkit-scrollbar {
         }
 
         .nutrition-box {
-            @apply absolute md:bottom-16 bottom-0 left-1/2 -translate-x-1/2 w-[80%] md:px-5 px-5;
+            @apply absolute md:bottom-16 bottom-4 left-1/2 -translate-x-1/2 md:w-[80%] w-full md:h-auto md:px-5 px-2;
 
             .list-wrapper {
-                @apply bg-[#fdebd2] rounded-full border-[.5vw] border-[#e8ddca] mx-auto max-w-4xl py-5 md:px-0 px-5 flex sm:flex-col justify-between items-center;
+                @apply bg-[#fdebd2] rounded-full border-[.5vw] border-[#e8ddca] mx-auto max-w-4xl py-5 md:px-0 px-5 flex justify-between items-center;
 
                 p {
                     @apply text-[#865720];
