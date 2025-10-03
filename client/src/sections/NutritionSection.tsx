@@ -26,7 +26,12 @@ const NutritionSection = () => {
             rotate: 4,
             ease: "power1.in"
         }).from(paraSplit.words, {
-
+            duration: 1,
+            opacity: 0,
+            stagger: 0.5,
+            yPercent: 30,
+            rotate: 4,
+            ease: "power1.inOut"
         });
     });
 
