@@ -1,6 +1,32 @@
+import { useGSAP } from "@gsap/react"
 import { nutrientLists } from "../constants/details"
+import gsap from "gsap"
+import { SplitText } from "gsap/all"
 
 const NutritionSection = () => {
+
+    useGSAP(() => {
+        const headingSplit = SplitText.create(".h1-animate", { type: "words" });
+        const nutTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".nutrition-section",
+                start: "top 35%",
+                // end: "top 45%",
+                // markers: true
+            }
+        });
+
+        nutTl.from(headingSplit.words, {
+            duration: 1,
+            stagger: 0.2,
+            opacity: 0,
+            yPercent: 600,
+            rotate: 4,
+            scrub: true,
+            ease: "power2.out"
+        });
+    });
+
     return (
         <section className="nutrition-section">
             <img src="/images/slider-dip.png" alt="" className="w-full object-cover z-0" />
@@ -9,7 +35,7 @@ const NutritionSection = () => {
                 <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
                     <div className="relative inline-block md:translate-y-20">
                         <div className="general-title relative flex flex-col justify-center items-center gap-24">
-                            <div className="overflow-hidden place-self-start">
+                            <div className="overflow-hidden place-self-start -translate-y-10 h1-animate">
                                 <h1>It still does</h1>
                             </div>
                             <div className="nutrition-text-scroll place-self-start">
