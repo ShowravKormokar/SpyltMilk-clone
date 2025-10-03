@@ -6,24 +6,27 @@ import { SplitText } from "gsap/all"
 const NutritionSection = () => {
 
     useGSAP(() => {
-        const headingSplit = SplitText.create(".h1-animate", { type: "words" });
+        const headingSplit = SplitText.create(".h1-animate", { type: "chars" });
+        const paraSplit = SplitText.create(".para-animate", { type: "words" });
+
         const nutTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".nutrition-section",
-                start: "top 35%",
-                // end: "top 45%",
+                start: "top 40%",
+                end: "top 20%",
+                scrub: true,
                 // markers: true
             }
         });
 
-        nutTl.from(headingSplit.words, {
+        nutTl.from(headingSplit.chars, {
             duration: 1,
-            stagger: 0.2,
-            opacity: 0,
+            stagger: 0.5,
             yPercent: 600,
             rotate: 4,
-            scrub: true,
-            ease: "power2.out"
+            ease: "power1.in"
+        }).from(paraSplit.words, {
+
         });
     });
 
@@ -35,7 +38,7 @@ const NutritionSection = () => {
                 <div className="flex md:flex-row flex-col justify-between md:px-10 px-5 mt-14 md:mt-0">
                     <div className="relative inline-block md:translate-y-20">
                         <div className="general-title relative flex flex-col justify-center items-center gap-24">
-                            <div className="overflow-hidden place-self-start -translate-y-10 h1-animate">
+                            <div className="overflow-hidden place-self-start h1-animate">
                                 <h1>It still does</h1>
                             </div>
                             <div className="nutrition-text-scroll place-self-start">
@@ -47,7 +50,7 @@ const NutritionSection = () => {
                     </div>
                     <div className="flex md:justify-end items-start translate-y-20">
                         <div className="md:max-w-xs max-w-md">
-                            <p className="text-sm md:text-right text-balance font-paragraph">Milk contains a wide array of nutrients including vitamins, minerals, and proteins and that is lactose free.</p>
+                            <p className="text-sm md:text-right text-balance font-paragraph para-animate">Milk contains a wide array of nutrients including vitamins, minerals, and proteins and that is lactose free.</p>
                         </div>
                     </div>
                 </div>
