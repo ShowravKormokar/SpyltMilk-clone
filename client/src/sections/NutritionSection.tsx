@@ -12,27 +12,28 @@ const NutritionSection = () => {
         const nutTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".nutrition-section",
-                start: "top 40%",
-                end: "top 20%",
+                start: "top 30%",
+                end: "top 10%",
                 scrub: true,
                 // markers: true
             }
         });
 
         nutTl.from(headingSplit.chars, {
-            duration: 1,
-            stagger: 0.5,
+            stagger: 0.2,
             yPercent: 600,
             rotate: 4,
-            ease: "power1.in"
+            ease: "power1.inOut"
         }).from(paraSplit.words, {
-            duration: 1,
             opacity: 0,
-            stagger: 0.5,
+            stagger: 0.2,
             yPercent: 30,
             rotate: 4,
             ease: "power1.inOut"
-        });
+        }, "-=0.5").to(".nutrition-text-scroll", {
+            duration: 2,
+            clipPath: "polygon(0% 0%,100% 0%,100% 100%, 0% 100%)",
+        }, "-=0.2");
     });
 
     return (
@@ -48,7 +49,7 @@ const NutritionSection = () => {
                             </div>
                             <div className="nutrition-text-scroll place-self-start">
                                 <div className="bg-yellow-brown pb-5 md:pt-0 pt-3 md:px-5 px-3 inline-block">
-                                    <h2 className="text-milk-yellow">Body Good</h2>
+                                    <h2 className="text-milk-yellow rolling">Body Good</h2>
                                 </div>
                             </div>
                         </div>

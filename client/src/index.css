@@ -189,7 +189,11 @@ body::-webkit-scrollbar {
         }
 
         .nutrition-text-scroll {
-            @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap opacity-0 md:-mt-32 -mt-24;
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+
+        .nutrition-text-scroll {
+            @apply rotate-[-3deg] border-[.5vw] border-[#e3d3bc] text-nowrap md:-mt-32 -mt-24;
         }
 
         .nutrition-box {
