@@ -186,7 +186,7 @@ body::-webkit-scrollbar {
 
         .nutrition-title {
             @apply 2xl:max-w-4xl xl:max-w-2xl md:py-0 py-3 md:pb-5 pb-0 lg:pb-0 md:text-center text-[#513022];
-        }   
+        }
 
         .nutrition-text-scroll {
             clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
@@ -213,7 +213,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    /* .benefit-section {
+    .benefit-section {
         @apply min-h-dvh bg-[#222123] overflow-hidden relative;
 
         p {
@@ -253,7 +253,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    .testimonials-section {
+    /*.testimonials-section {
         @apply bg-milk relative w-full h-[120dvh];
 
         .pin-box {
