@@ -1,10 +1,15 @@
 import { useGSAP } from "@gsap/react"
 import ClipPathTitle from "../components/ClipPathTitle"
 import gsap from "gsap";
+import { SplitText } from "gsap/all";
 
 const BenifitSection = () => {
 
     useGSAP(() => {
+
+        const paraSplit = SplitText.create(".para-animate", { type: "words" });
+
+
         const revealTl = gsap.timeline({
             delay: 1,
             scrollTrigger: {
@@ -21,6 +26,13 @@ const BenifitSection = () => {
             opacity: 1,
             clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
             ease: "circ.out"
+        }).from(paraSplit.words, {
+            duration: 1,
+            stagger: 0.2,
+            opacity: 0,
+            rotate: 8,
+            yPercent: 30,
+            ease: "power1.inOut"
         }).to(".benefit-section .second-title", {
             duration: 1,
             opacity: 1,
@@ -36,14 +48,14 @@ const BenifitSection = () => {
             opacity: 1,
             clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
             ease: "circ.out"
-        })
+        });
     });
 
     return (
         <section className="benefit-section">
             <div className="container mx-auto pt-16">
                 <div className="col-center">
-                    <p className="md:text-sm">Unlock the Advantages:
+                    <p className="md:text-sm para-animate">Unlock the Advantages:
                         <br />Explore the Key Benefits of Choosing SPYLT
                     </p>
                 </div>
