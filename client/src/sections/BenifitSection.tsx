@@ -54,7 +54,7 @@ const BenifitSection = () => {
 
     return (
         <section className="benefit-section">
-            <div className="container mx-auto pt-16">
+            <div className="container mx-auto pt-16 mb-0 py-0">
                 <div className="col-center">
                     <p className="md:text-sm para-animation">Unlock the Advantages:
                         <br />Explore the Key Benefits of Choosing SPYLT
@@ -72,7 +72,7 @@ const BenifitSection = () => {
                 </div>
             </div>
 
-            <div className="relative overlay-box">
+            <div className="vd-pin relative overlay-box -mt-52">
                 <VideoPin />
             </div>
         </section>

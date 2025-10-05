@@ -214,7 +214,7 @@ body::-webkit-scrollbar {
     }
 
     .benefit-section {
-        @apply min-h-auto bg-[#222123] overflow-hidden relative;
+        @apply min-h-dvh bg-[#222123] overflow-hidden relative;
 
         p {
             @apply text-milk font-paragraph text-center text-lg;
@@ -236,19 +236,11 @@ body::-webkit-scrollbar {
             @apply rotate-[-5deg] md:-translate-y-12;
         }
 
-        /* .video-box {
+        .video-box {
             clip-path: circle(6% at 50% 50%);
-        } */
+        }
 
-        .vd-pin-section {
-            /* @apply md:h-[110vh] h-dvh overflow-hidden md:-translate-y-[15%] md:mt-0 mt-20; */
-            /* 
-            video {
-                @apply size-full absolute inset-0 object-cover;
-            } */
-
-
-
+        .vd-pin {
             .play-btn {
                 @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
             }
