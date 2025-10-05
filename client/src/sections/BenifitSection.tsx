@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react"
 import ClipPathTitle from "../components/ClipPathTitle"
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import VideoPin from "../components/videoPin";
 
 const BenifitSection = () => {
 
@@ -69,6 +70,10 @@ const BenifitSection = () => {
                 <div className="md:mt-0 mt-10">
                     <p>And much more ...</p>
                 </div>
+            </div>
+
+            <div className="relative overlay-box">
+                <VideoPin />
             </div>
         </section>
     )
