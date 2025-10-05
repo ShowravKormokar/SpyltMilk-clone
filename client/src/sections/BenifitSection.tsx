@@ -7,7 +7,7 @@ const BenifitSection = () => {
 
     useGSAP(() => {
 
-        const paraSplit = SplitText.create(".para-animate", { type: "words" });
+        const hParaSplit = SplitText.create(".para-animation", { type: "words" });
 
 
         const revealTl = gsap.timeline({
@@ -17,22 +17,22 @@ const BenifitSection = () => {
                 start: "top 65%",
                 end: "top -10%",
                 scrub: 1.5,
-                markers: true
+                // markers: true
             }
         });
 
-        revealTl.to(".benefit-section .first-title", {
-            duration: 1,
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
-        }).from(paraSplit.words, {
+        revealTl.from(hParaSplit.words, {
             duration: 1,
             stagger: 0.2,
             opacity: 0,
             rotate: 8,
             yPercent: 30,
             ease: "power1.inOut"
+        }).to(".benefit-section .first-title", {
+            duration: 1,
+            opacity: 1,
+            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+            ease: "circ.out"
         }).to(".benefit-section .second-title", {
             duration: 1,
             opacity: 1,
@@ -55,7 +55,7 @@ const BenifitSection = () => {
         <section className="benefit-section">
             <div className="container mx-auto pt-16">
                 <div className="col-center">
-                    <p className="md:text-sm para-animate">Unlock the Advantages:
+                    <p className="md:text-sm para-animation">Unlock the Advantages:
                         <br />Explore the Key Benefits of Choosing SPYLT
                     </p>
                 </div>
