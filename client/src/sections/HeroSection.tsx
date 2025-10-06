@@ -2,6 +2,9 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import heroBgImg from "../assets/images/hero-bg.png"
+import heroImg from "../assets/images/hero-img.png"
+import heroBgVid from "../assets/videos/hero-bg.mp4"
 
 const HeroSection = () => {
 
@@ -60,11 +63,11 @@ const HeroSection = () => {
             <div className="hero-container">
                 {(isTabHero ?
                     <>
-                        {isMobHero && <img src="/images/hero-bg.png" alt="" className="absolute bottom-40 object-cover size-full" />}
-                        <img src="/images/hero-img.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto" />
+                        {isMobHero && <img src={heroBgImg} alt="" className="absolute bottom-40 object-cover size-full" />}
+                        <img src={heroImg} alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto" />
                     </>
                     :
-                    <video src="/videos/hero-bg.mp4" autoPlay playsInline muted className="absolute inset-0 size-full object-cover" />
+                    <video src={heroBgVid} autoPlay playsInline muted className="absolute inset-0 size-full object-cover" />
                 )}
                 <div className="hero-content opacity-0">
                     <div className="overflow-hidden">

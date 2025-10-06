@@ -3,7 +3,7 @@
 
 @font-face {
     font-family: "ProximaNova, sans-serif";
-    src: url("/fonts/ProximaNova-Regular.otf");
+    src: url("../src/assets/fonts/ProximaNova-Regular.otf");
 }
 
 @theme {
@@ -79,7 +79,7 @@ body::-webkit-scrollbar {
             }
 
             .hero-text-scroll {
-                clipPath: "polygon(50% 0,50% 0,50% 100%, 50% 100%";
+                clip-path: "polygon(50% 0,50% 0,50% 100%, 50% 100%";
             }
 
             .hero-text-scroll {
