@@ -10,6 +10,7 @@ import NutritionSection from "./sections/NutritionSection";
 import BenifitSection from "./sections/BenifitSection";
 import FooterSection from "./sections/FooterSection";
 import BottomBanner from "./sections/BottomBanner";
+import "remixicon/fonts/remixicon.css";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 

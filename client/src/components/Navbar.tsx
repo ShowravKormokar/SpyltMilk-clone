@@ -1,10 +1,56 @@
+import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+    useGSAP(() => {
+        const els = Array.from(document.querySelectorAll<HTMLElement>(".nav-logo, .menu-hover"));
+        if (!els.length) return;
+
+        const disposers: Array<() => void> = [];
+
+        els.forEach((el) => {
+            const onMove = (e: MouseEvent) => {
+                const b = el.getBoundingClientRect();
+                const x = e.clientX - b.left;
+                const y = e.clientY - b.top;
+                const offsetX = (x / b.width - 0.5) * 10; // ±5px
+                const offsetY = (y / b.height - 0.5) * 10; // ±5px
+                gsap.to(el, { x: offsetX, y: offsetY, duration: 0.25, ease: "power2.out" });
+            };
+
+            const onLeave = () => gsap.to(el, { x: 0, y: 0, duration: 0.35, ease: "power3.out" });
+
+            el.addEventListener("mousemove", onMove);
+            el.addEventListener("mouseleave", onLeave);
+
+            // push disposer for cleanup
+            disposers.push(() => {
+                el.removeEventListener("mousemove", onMove);
+                el.removeEventListener("mouseleave", onLeave);
+            });
+        });
+
+        return () => disposers.forEach((d) => d());
+    });
+
     return (
-        <nav className="fixed top-0 left-0 z-50 md:p-9 p-3">
-            <img src="/images/nav-logo.svg" alt="navbar-logo" className="md:w-24 w-20" />
+        <nav className="fixed top-0 left-0 z-50 flex items-center justify-between md:p-6 p-3 w-full bg-transparent">
+            <img
+                src="/images/nav-logo.svg"
+                alt="navbar-logo"
+                className="md:w-18 w-20 nav-logo"
+            />
+            <div className="p-1 backdrop-blur-xl rounded-full menu-hover">
+                <i className="ri-menu-5-line text-[#523122] text-2xl"></i>
+            </div>
+            <div className="px-6 py-2 bg-[#f3e2d5] rounded-3xl hover:bg-[#e9aa56] text-center">
+                <a href="#" className="text-[#523122] text-sm font-semibold p-0 m-0">
+                    FIND STORES
+                </a>
+            </div>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
