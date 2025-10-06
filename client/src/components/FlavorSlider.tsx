@@ -4,6 +4,19 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 
+// At the top of component file
+// Glob import all images and videos
+const images: Record<string, { default: string }> = import.meta.glob(
+    "../assets/images/*.{webp,svg,png,jpg,jpeg}",
+    { eager: true }
+);
+
+// Access image by file name dynamically
+const getImage = (fileName: string): string => {
+    const key = `../assets/images/${fileName}`;
+    return images[key]?.default || "";
+};
+
 const FlavorSlider = () => {
     const slideRef = useRef<HTMLDivElement | null>(null);
 
@@ -101,19 +114,17 @@ const FlavorSlider = () => {
                         className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
                     >
                         <img
-                            src={`../assets/images/${flavor.color}-bg.svg`}
+                            src={getImage(`${flavor.color}-bg.svg`)}
                             alt={flavor.name}
                             className="absolute bottom-0"
                         />
-
                         <img
-                            src={`../assets/images/${flavor.color}-drink.webp`}
+                            src={getImage(`${flavor.color}-drink.webp`)}
                             alt={flavor.name}
                             className="drinks"
                         />
-
                         <img
-                            src={`../assets/images/${flavor.color}-elements.webp`}
+                            src={getImage(`${flavor.color}-elements.webp`)}
                             alt={flavor.name}
                             className="elements"
                         />
