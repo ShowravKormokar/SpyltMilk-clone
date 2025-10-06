@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react"
 import ClipPathTitle from "../components/ClipPathTitle"
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import VideoPin from "../components/videoPin";
+import VideoPin from "../components/VideoPin";
 
 const BenifitSection = () => {
 

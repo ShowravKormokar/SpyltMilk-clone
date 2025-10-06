@@ -251,6 +251,12 @@ body::-webkit-scrollbar {
         }
     }
 
+    .bottom-banner {
+        .rolling-animation {
+            clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        }
+    }
+
     /*.testimonials-section {
         @apply bg-milk relative w-full h-[120dvh];
 
