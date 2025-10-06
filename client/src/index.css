@@ -265,7 +265,7 @@ body::-webkit-scrollbar {
         h1 {
             @apply uppercase text-[20.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
         }
-    }
+    }*/
 
     .footer-section {
         @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];
@@ -279,13 +279,13 @@ body::-webkit-scrollbar {
         }
 
         .copyright-box {
-            @apply 2xl:absolute w-full md:px-10 px-5 py-7 bottom-0 text-milk opacity-50 md:text-lg font-paragraph flex gap-7 md:flex-row flex-col-reverse md:justify-between justify-center items-center;
+            @apply 2xl:absolute w-full md:px-7 px-5 py-5 bottom-0 text-milk opacity-50 md:text-sm font-paragraph flex gap-7 md:flex-row flex-col-reverse md:justify-between justify-center items-center;
 
             p {
                 @apply text-center;
             }
         }
-    } */
+    }
 }
 
 .nutrition-section {
