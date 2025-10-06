@@ -1,6 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { getImage } from '../utils/media';
 
 const BottomBanner = () => {
 
@@ -34,8 +35,8 @@ const BottomBanner = () => {
 
     return (
         <section className="bottom-banner 2xl:min-h-dvh overflow-hidden relative bg-[#222123] flex flex-col justify-center items-start">
-            <img src="/images/footer-dip.png" alt="footer-img" className="w-full object-cover -translate-y-1" />
-            <img src="/images/bottom-banner.svg" alt="" className="h-fit mt-10" />
+            <img src={getImage("footer-dip.png")} alt="footer-img" className="w-full object-cover -translate-y-1" />
+            <img src={getImage("bottom-banner.svg")} alt="" className="h-fit mt-10" />
 
             <div className="absolute w-[35rem] h-[24rem] z-100 top-[30%] left-20">
                 <div className="relative inline-block md:translate-y-20 z-100">

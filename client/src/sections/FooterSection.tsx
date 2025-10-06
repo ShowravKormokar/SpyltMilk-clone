@@ -1,6 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
+import { getImage } from '../utils/media';
+import splash from "../assets/videos/splash.mp4"
 
 const FooterSection = () => {
 
@@ -31,17 +33,17 @@ const FooterSection = () => {
                 </div>
             </div>
 
-            <video src="/videos/splash.mp4" autoPlay playsInline muted className="absolute object-contain top-[-4%] mix-blend-lighten z-10 opacity-90" />
+            <video src={splash} autoPlay playsInline muted className="absolute object-contain top-[-4%] mix-blend-lighten z-10 opacity-90" />
 
             <div className="flex-center gap-3 relative z-10 md:mt-10 mt-5">
                 <div className="social-btn">
-                    <img src="/images/yt.svg" alt="yt" />
+                    <img src={getImage("yt.svg")} alt="yt" />
                 </div>
                 <div className="social-btn">
-                    <img src="/images/insta.svg" alt="yt" />
+                    <img src={getImage("insta.svg")} alt="yt" />
                 </div>
                 <div className="social-btn">
-                    <img src="/images/tiktok.svg" alt="yt" />
+                    <img src={getImage("tiktok.svg")} alt="yt" />
                 </div>
             </div>
 
@@ -72,7 +74,7 @@ const FooterSection = () => {
                             placeholder="Enter your email"
                             className="w-full placeholder:font-sans placeholder:text-[#999999]"
                         />
-                        <img src="/images/arrow.svg" alt="arrow" />
+                        <img src={getImage("arrow.svg")} alt="arrow" />
                     </div>
                 </div>
             </div>

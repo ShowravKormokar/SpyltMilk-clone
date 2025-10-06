@@ -1,6 +1,7 @@
 import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { getImage } from '../utils/media';
 
 const Navbar: React.FC = () => {
     useGSAP(() => {
@@ -37,7 +38,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="fixed top-0 left-0 z-50 flex items-center justify-between md:p-6 p-3 w-full bg-transparent">
             <img
-                src="/images/nav-logo.svg"
+                src={getImage("nav-logo.svg")}
                 alt="navbar-logo"
                 className="md:w-18 w-20 nav-logo"
             />
