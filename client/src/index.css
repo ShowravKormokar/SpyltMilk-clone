@@ -30,7 +30,7 @@ body {
     background-color: #000;
     /* background-color: #faeade; */
     color: #523122;
-    font-family: "Antonio", sans-serif;
+    font-family: "Antonio", 'ProximaNova-Regular', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
