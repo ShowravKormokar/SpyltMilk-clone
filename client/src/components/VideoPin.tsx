@@ -9,8 +9,8 @@ const VideoPin = () => {
         const vpTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".vd-pin",
-                start: "0% top",
-                end: "150% top",
+                start: "0px top",
+                end: "2000px top",
                 scrub: 1.5,
                 pin: true,
                 // markers: true
