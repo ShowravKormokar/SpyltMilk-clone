@@ -7,20 +7,22 @@ import splash from "../assets/videos/splash.mp4"
 const FooterSection = () => {
 
     useGSAP(() => {
-        const footTextSplit = SplitText.create(".footer-title-animation", { type: "chars" });
+        document.fonts.ready.then(() => {
+            const footTextSplit = SplitText.create(".footer-title-animation", { type: "chars" });
 
-        gsap.from(footTextSplit.chars, {
-            yPercent: 200,
-            stagger: 0.02,
-            ease: "power1.inOut",
-            zIndex: 0,
-            scrollTrigger: {
-                trigger: ".footer-section",
-                start: "top 50%",
-                end: "top 10%",
-                scrub: 1.5,
-                // markers: true
-            }
+            gsap.from(footTextSplit.chars, {
+                yPercent: 200,
+                stagger: 0.02,
+                ease: "power1.inOut",
+                zIndex: 0,
+                scrollTrigger: {
+                    trigger: ".footer-section",
+                    start: "top 50%",
+                    end: "top 10%",
+                    scrub: 1.5,
+                    // markers: true
+                }
+            });
         });
     });
 

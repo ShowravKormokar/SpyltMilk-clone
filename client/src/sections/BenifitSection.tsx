@@ -7,48 +7,49 @@ import VideoPin from "../components/VideoPin";
 const BenifitSection = () => {
 
     useGSAP(() => {
+        document.fonts.ready.then(() => {
+            const hParaSplit = SplitText.create(".para-animation", { type: "words" });
 
-        const hParaSplit = SplitText.create(".para-animation", { type: "words" });
 
+            const revealTl = gsap.timeline({
+                delay: 1,
+                scrollTrigger: {
+                    trigger: ".benefit-section",
+                    start: "top 65%",
+                    end: "top -10%",
+                    scrub: 1.5,
+                    // markers: true
+                }
+            });
 
-        const revealTl = gsap.timeline({
-            delay: 1,
-            scrollTrigger: {
-                trigger: ".benefit-section",
-                start: "top 65%",
-                end: "top -10%",
-                scrub: 1.5,
-                // markers: true
-            }
-        });
-
-        revealTl.from(hParaSplit.words, {
-            duration: 1,
-            stagger: 0.2,
-            opacity: 0,
-            rotate: 8,
-            yPercent: 30,
-            ease: "power1.inOut"
-        }).to(".benefit-section .first-title", {
-            duration: 1,
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
-        }).to(".benefit-section .second-title", {
-            duration: 1,
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
-        }).to(".benefit-section .third-title", {
-            duration: 1,
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
-        }).to(".benefit-section .fourth-title", {
-            duration: 1,
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
+            revealTl.from(hParaSplit.words, {
+                duration: 1,
+                stagger: 0.2,
+                opacity: 0,
+                rotate: 8,
+                yPercent: 30,
+                ease: "power1.inOut"
+            }).to(".benefit-section .first-title", {
+                duration: 1,
+                opacity: 1,
+                clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out"
+            }).to(".benefit-section .second-title", {
+                duration: 1,
+                opacity: 1,
+                clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out"
+            }).to(".benefit-section .third-title", {
+                duration: 1,
+                opacity: 1,
+                clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out"
+            }).to(".benefit-section .fourth-title", {
+                duration: 1,
+                opacity: 1,
+                clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out"
+            });
         });
     });
 

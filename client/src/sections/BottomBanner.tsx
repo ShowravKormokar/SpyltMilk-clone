@@ -6,29 +6,31 @@ import { getImage } from '../utils/media';
 const BottomBanner = () => {
 
     useGSAP(() => {
-        const bTitleSplit = SplitText.create(".b-title", { type: "chars" });
+        document.fonts.ready.then(() => {
+            const bTitleSplit = SplitText.create(".b-title", { type: "chars" });
 
-        const revealTl = gsap.timeline({
-            delay: 1,
-            scrollTrigger: {
-                trigger: ".bottom-banner",
-                start: "top 50%",
-                end: "top 10%",
-                scrub: 1.5,
-                // markers: true
-            }
-        });
+            const revealTl = gsap.timeline({
+                delay: 1,
+                scrollTrigger: {
+                    trigger: ".bottom-banner",
+                    start: "top 50%",
+                    end: "top 10%",
+                    scrub: 1.5,
+                    // markers: true
+                }
+            });
 
-        revealTl.from(bTitleSplit.chars, {
-            stagger: 0.2,
-            opacity: 0,
-            rotate: 3,
-            yPercent: 30,
-            ease: "power1.inOut"
-        }).to(".bottom-banner .rolling-animation", {
-            opacity: 1,
-            clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
-            ease: "circ.out"
+            revealTl.from(bTitleSplit.chars, {
+                stagger: 0.2,
+                opacity: 0,
+                rotate: 3,
+                yPercent: 30,
+                ease: "power1.inOut"
+            }).to(".bottom-banner .rolling-animation", {
+                opacity: 1,
+                clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
+                ease: "circ.out"
+            });
         });
     });
 

@@ -12,34 +12,36 @@ const NutritionSection = () => {
     });
 
     useGSAP(() => {
-        const headingSplit = SplitText.create(".h1-animate", { type: "chars" });
-        const paraSplit = SplitText.create(".para-animate", { type: "words" });
+        document.fonts.ready.then(() => {
+            const headingSplit = SplitText.create(".h1-animate", { type: "chars" });
+            const paraSplit = SplitText.create(".para-animate", { type: "words" });
 
-        const nutTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".nutrition-section",
-                start: "top 30%",
-                end: "top 10%",
-                scrub: true,
-                // markers: true
-            }
+            const nutTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".nutrition-section",
+                    start: "top 30%",
+                    end: "top 10%",
+                    scrub: true,
+                    // markers: true
+                }
+            });
+
+            nutTl.from(headingSplit.chars, {
+                stagger: 0.2,
+                yPercent: 600,
+                rotate: 4,
+                ease: "power1.inOut"
+            }).from(paraSplit.words, {
+                opacity: 0,
+                stagger: 0.2,
+                yPercent: 30,
+                rotate: 4,
+                ease: "power1.inOut"
+            }, "-=0.5").to(".nutrition-text-scroll", {
+                duration: 2,
+                clipPath: "polygon(0% 0%,100% 0%,100% 100%, 0% 100%)",
+            }, "-=0.2");
         });
-
-        nutTl.from(headingSplit.chars, {
-            stagger: 0.2,
-            yPercent: 600,
-            rotate: 4,
-            ease: "power1.inOut"
-        }).from(paraSplit.words, {
-            opacity: 0,
-            stagger: 0.2,
-            yPercent: 30,
-            rotate: 4,
-            ease: "power1.inOut"
-        }, "-=0.5").to(".nutrition-text-scroll", {
-            duration: 2,
-            clipPath: "polygon(0% 0%,100% 0%,100% 100%, 0% 100%)",
-        }, "-=0.2");
     });
 
     return (
