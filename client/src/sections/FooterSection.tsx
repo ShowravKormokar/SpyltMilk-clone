@@ -23,8 +23,7 @@ const FooterSection = () => {
     });
 
     return (
-        <section className="footer-section">
-            <img src="/images/footer-dip.png" alt="footer-img" className="w-full object-cover -translate-y-1" />
+        <section className="footer-section pt-20">
 
             <div className="2xl:h-[110dvh] relative z-100 pt-[8vh]">
                 <div className="overflow-hidden">
@@ -32,7 +31,7 @@ const FooterSection = () => {
                 </div>
             </div>
 
-            <video src="/videos/splash.mp4" autoPlay playsInline muted className="absolute object-contain top-[10%] mix-blend-lighten z-10 opacity-90" />
+            <video src="/videos/splash.mp4" autoPlay playsInline muted className="absolute object-contain top-[-4%] mix-blend-lighten z-10 opacity-90" />
 
             <div className="flex-center gap-3 relative z-10 md:mt-10 mt-5">
                 <div className="social-btn">
