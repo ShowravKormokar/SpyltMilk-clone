@@ -16,10 +16,10 @@ const Navbar: React.FC = () => {
                 const y = e.clientY - b.top;
                 const offsetX = (x / b.width - 0.5) * 10; // ±5px
                 const offsetY = (y / b.height - 0.5) * 10; // ±5px
-                gsap.to(el, { x: offsetX, y: offsetY, duration: 0.25, ease: "power2.out" });
+                gsap.to(el, { x: offsetX, y: offsetY, scale: 1.2, duration: 0.25, ease: "power2.out" });
             };
 
-            const onLeave = () => gsap.to(el, { x: 0, y: 0, duration: 0.35, ease: "power3.out" });
+            const onLeave = () => gsap.to(el, { x: 0, y: 0, scale: 1, duration: 0.35, ease: "power3.out" });
 
             el.addEventListener("mousemove", onMove);
             el.addEventListener("mouseleave", onLeave);
