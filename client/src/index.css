@@ -108,10 +108,10 @@ body::-webkit-scrollbar {
         @apply bg-[#7f3b2d] text-milk min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
 
         .msg-wrapper {
-            @apply 2xl:text-[8.5rem] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-24 gap-14;
+            @apply 2xl:text-[8.5rem] md:text-[96px] text-6xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-24 gap-14;
 
             h1:first-of-type {
-                @apply 2xl:max-w-4xl md:max-w-2xl max-w-xs text-center text-[#faeade10];
+                @apply 2xl:max-w-4xl md:w-[90%] text-center text-[#faeade10];
             }
 
             h1:last-of-type {

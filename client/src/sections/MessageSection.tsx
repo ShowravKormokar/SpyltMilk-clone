@@ -6,11 +6,12 @@ const MessageSection = () => {
 
     useGSAP(() => {
         document.fonts.ready.then(() => {
-            const firstMsgSplit = SplitText.create(".first-message", { type: "chars" });
-            const secMsgSplit = SplitText.create(".second-message", { type: "chars" });
+            const firstMsgSplit = SplitText.create(".first-message", { type: "words" });
+            const secMsgSplit = SplitText.create(".second-message", { type: "words" });
             const paragraphSplit = SplitText.create(".message-content p", { type: "words,lines", linesClass: "paragraph-line" });
+            console.log(firstMsgSplit);
 
-            gsap.to(firstMsgSplit.chars, {
+            gsap.to(firstMsgSplit.words, {
                 color: "#faeade",
                 ease: "power1.in",
                 stagger: 1,
@@ -23,7 +24,7 @@ const MessageSection = () => {
                 }
             });
 
-            gsap.to(secMsgSplit.chars, {
+            gsap.to(secMsgSplit.words, {
                 color: "#faeade",
                 ease: "power1.in",
                 stagger: 1,
