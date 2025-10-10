@@ -11,6 +11,7 @@ import BenifitSection from "./sections/BenifitSection";
 import FooterSection from "./sections/FooterSection";
 import BottomBanner from "./sections/BottomBanner";
 import "remixicon/fonts/remixicon.css";
+import TestimonialSection from "./sections/TestimonialSection";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -32,7 +33,10 @@ const App = () => {
                     <MessageSection />
                     <FlavorSection />
                     <NutritionSection />
-                    <BenifitSection />
+                    <div>
+                        <BenifitSection />
+                        <TestimonialSection />
+                    </div>
                     <BottomBanner />
                     <FooterSection />
                     {/* <div className="h-dvh border border-red-400"></div> */}

@@ -257,7 +257,7 @@ body::-webkit-scrollbar {
         }
     }
 
-    /*.testimonials-section {
+    .testimonials-section {
         @apply bg-milk relative w-full h-[120dvh];
 
         .pin-box {
@@ -271,7 +271,7 @@ body::-webkit-scrollbar {
         h1 {
             @apply uppercase text-[20.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
         }
-    }*/
+    }
 
     .footer-section {
         @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];

@@ -11,7 +11,7 @@ interface Nutrient {
 }
 
 interface Card {
-    src: string;
+    src: number;
     rotation: string;
     name: string;
     img: string;
@@ -64,47 +64,47 @@ const nutrientLists: Nutrient[] = [
 // Cards list
 const cards: Card[] = [
     {
-        src: "../assets/videos/f1.mp4",
+        src: 1,
         rotation: "rotate-z-[-10deg]",
         name: "Madison",
         img: "../assets/images/p1.png",
         translation: "translate-y-[-5%]",
     },
     {
-        src: "../assets/videos/f2.mp4",
+        src: 2,
         rotation: "rotate-z-[4deg]",
         name: "Alexander",
         img: "../assets/images/p2.png",
     },
     {
-        src: "../assets/videos/f3.mp4",
+        src: 3,
         rotation: "rotate-z-[-4deg]",
         name: "Andrew",
         img: "../assets/images/p3.png",
         translation: "translate-y-[-5%]",
     },
     {
-        src: "../assets/videos/f4.mp4",
+        src: 4,
         rotation: "rotate-z-[4deg]",
         name: "Bryan",
         img: "../assets/images/p4.png",
         translation: "translate-y-[5%]",
     },
     {
-        src: "../assets/videos/f5.mp4",
+        src: 5,
         rotation: "rotate-z-[-10deg]",
         name: "Chris",
         img: "../assets/images/p5.png",
     },
     {
-        src: "../assets/videos/f6.mp4",
+        src: 6,
         rotation: "rotate-z-[4deg]",
         name: "Devante",
         img: "../assets/images/p6.png",
         translation: "translate-y-[5%]",
     },
     {
-        src: "../assets/videos/f7.mp4",
+        src: 7,
         rotation: "rotate-z-[-3deg]",
         name: "Melisa",
         img: "../assets/images/p7.png",
