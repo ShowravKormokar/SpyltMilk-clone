@@ -10,7 +10,7 @@ const VideoPin = () => {
             scrollTrigger: {
                 trigger: ".vd-pin",
                 start: "0px top",
-                end: "2000px top",
+                end: "2500px top",
                 scrub: 1.5,
                 pin: true,
                 // markers: true
