@@ -1,14 +1,7 @@
 import { cards } from "../constants/details";
-import vd1 from "../assets/videos/f1.mp4"
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
-// import vd2 from "../assets/videos/f2.mp4"
-// import vd3 from "../assets/videos/f3.mp4"
-// import vd4 from "../assets/videos/f4.mp4"
-// import vd5 from "../assets/videos/f5.mp4"
-// import vd6 from "../assets/videos/f6.mp4"
-// import vd7 from "../assets/videos/f7.mp4"
 
 const TestimonialSection = () => {
     // Refs to multiple video elements
@@ -56,20 +49,15 @@ const TestimonialSection = () => {
         })
     });
 
-    // Assign ref safely
     const setVideoRef = (el: HTMLVideoElement | null, index: number): void => {
-        if (el) {
-            vdRf.current[index] = el;
-        }
+        if (el) vdRf.current[index] = el;
     };
 
-    // Play handler
     const handlePlay = (index: number): void => {
         const video = vdRf.current[index];
-        if (video) video.play();
+        if (video) video.play().catch((err) => console.error("Play failed:", err));
     };
 
-    // Pause handler
     const handlePause = (index: number): void => {
         const video = vdRf.current[index];
         if (video) video.pause();
@@ -93,8 +81,9 @@ const TestimonialSection = () => {
                             onMouseLeave={() => handlePause(index)}
                         >
                             <video
+                                key={index}
                                 ref={(el) => setVideoRef(el, index)}
-                                src={vd1} playsInline muted loop
+                                src={card.src} playsInline muted loop
                                 className="size-full object-cover"
                             />
                         </div>

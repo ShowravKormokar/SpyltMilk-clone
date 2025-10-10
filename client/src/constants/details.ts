@@ -1,3 +1,12 @@
+//Video Path
+import f1 from "../assets/videos/f1.mp4"
+import f2 from "../assets/videos/f2.mp4"
+import f3 from "../assets/videos/f3.mp4"
+import f4 from "../assets/videos/f4.mp4"
+import f5 from "../assets/videos/f5.mp4"
+import f6 from "../assets/videos/f6.mp4"
+import f7 from "../assets/videos/f7.mp4"
+
 // Define types
 interface Flavor {
     name: string;
@@ -11,7 +20,7 @@ interface Nutrient {
 }
 
 interface Card {
-    src: number;
+    src: any;
     rotation: string;
     name: string;
     img: string;
@@ -64,47 +73,47 @@ const nutrientLists: Nutrient[] = [
 // Cards list
 const cards: Card[] = [
     {
-        src: 1,
+        src: f1,
         rotation: "rotate-z-[-10deg]",
         name: "Madison",
         img: "../assets/images/p1.png",
         translation: "translate-y-[-5%]",
     },
     {
-        src: 2,
+        src: f2,
         rotation: "rotate-z-[4deg]",
         name: "Alexander",
         img: "../assets/images/p2.png",
     },
     {
-        src: 3,
+        src: f3,
         rotation: "rotate-z-[-4deg]",
         name: "Andrew",
         img: "../assets/images/p3.png",
         translation: "translate-y-[-5%]",
     },
     {
-        src: 4,
+        src: f4,
         rotation: "rotate-z-[4deg]",
         name: "Bryan",
         img: "../assets/images/p4.png",
         translation: "translate-y-[5%]",
     },
     {
-        src: 5,
+        src: f5,
         rotation: "rotate-z-[-10deg]",
         name: "Chris",
         img: "../assets/images/p5.png",
     },
     {
-        src: 6,
+        src: f6,
         rotation: "rotate-z-[4deg]",
         name: "Devante",
         img: "../assets/images/p6.png",
         translation: "translate-y-[5%]",
     },
     {
-        src: 7,
+        src: f7,
         rotation: "rotate-z-[-3deg]",
         name: "Melisa",
         img: "../assets/images/p7.png",
