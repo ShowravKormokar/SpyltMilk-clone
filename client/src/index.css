@@ -242,7 +242,7 @@ body::-webkit-scrollbar {
 
         .vd-pin {
             .play-btn {
-                @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
+                @apply absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
             }
 
             img:first-of-type {
@@ -258,13 +258,13 @@ body::-webkit-scrollbar {
     }
 
     .testimonials-section {
-        @apply bg-milk relative w-full h-[120dvh];
+        @apply bg-milk relative w-full h-[130vh];
 
         .pin-box {
-            @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
+            @apply flex items-center justify-center md:gap-12 w-full ps-52 absolute 2xl:bottom-32 bottom-[20vh];
 
             .vd-card {
-                @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden md:relative absolute border-[.5vw] border-milk;
+                @apply w-70 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden md:relative absolute border-[.5vw] border-milk;
             }
         }
 

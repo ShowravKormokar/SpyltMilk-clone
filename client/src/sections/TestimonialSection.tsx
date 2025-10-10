@@ -23,18 +23,19 @@ const TestimonialSection = () => {
             scrollTrigger: {
                 trigger: ".testimonials-section",
                 start: "top bottom",
-                end: "200% top",
+                end: "500% top",
                 scrub: true,
                 markers: true
             }
         });
 
         tesTl.to(".testimonials-section .ft-anim", {
-            xPercent: 70,
+            xPercent: 70 + 30,
+            yPercent: -100
         }).to(".testimonials-section .st-anim", {
-            xPercent: 25,
+            xPercent: 25 + 30, yPercent: -100
         }, "<").to(".testimonials-section .tt-anim", {
-            xPercent: -50,
+            xPercent: -80, yPercent: -100
         }, "<");
 
         const pinTl = gsap.timeline({
@@ -76,7 +77,7 @@ const TestimonialSection = () => {
 
     return (
         <section className="testimonials-section">
-            <div className="absolute size-full flex flex-col items-center pt-[5vw]">
+            <div className="h-[150vh] absolute size-full flex flex-col items-center pt-[5vw]">
                 <h1 className="text-black first-title ft-anim">What's</h1>
                 <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
                 <h1 className="text-black third-title tt-anim">Talking</h1>
