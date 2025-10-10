@@ -14,7 +14,46 @@ const TestimonialSection = () => {
     // Refs to multiple video elements
     const vdRf = useRef<HTMLVideoElement[]>([]);
 
-    
+    useGSAP(() => {
+        gsap.set(".testimonials-section", {
+            marginTop: "-140vh"
+        });
+
+        const tesTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".testimonials-section",
+                start: "top bottom",
+                end: "200% top",
+                scrub: true,
+                markers: true
+            }
+        });
+
+        tesTl.to(".testimonials-section .ft-anim", {
+            xPercent: 70,
+        }).to(".testimonials-section .st-anim", {
+            xPercent: 25,
+        }, "<").to(".testimonials-section .tt-anim", {
+            xPercent: -50,
+        }, "<");
+
+        const pinTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".testimonials-section",
+                start: "10% top",
+                end: "200% top",
+                scrub: 1.5,
+                pin: true,
+                markers: true
+            }
+        });
+
+        pinTl.from(".vd-card", {
+            yPercent: 150,
+            stagger: 0.2,
+            ease: "power1.inOut"
+        })
+    });
 
     // Assign ref safely
     const setVideoRef = (el: HTMLVideoElement | null, index: number): void => {
@@ -38,9 +77,9 @@ const TestimonialSection = () => {
     return (
         <section className="testimonials-section">
             <div className="absolute size-full flex flex-col items-center pt-[5vw]">
-                <h1 className="text-black first-title">What's</h1>
-                <h1 className="text-light-brown sec-title">Everyone</h1>
-                <h1 className="text-black third-title">Talking</h1>
+                <h1 className="text-black first-title ft-anim">What's</h1>
+                <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
+                <h1 className="text-black third-title tt-anim">Talking</h1>
             </div>
 
             <div className="pin-box">

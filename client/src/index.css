@@ -264,7 +264,7 @@ body::-webkit-scrollbar {
             @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
 
             .vd-card {
-                @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;
+                @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden md:relative absolute border-[.5vw] border-milk;
             }
         }
 
