@@ -18,7 +18,7 @@ const TestimonialSection = () => {
                 start: "top bottom",
                 end: "500% top",
                 scrub: true,
-                markers: true
+                // markers: true
             }
         });
 
@@ -38,7 +38,7 @@ const TestimonialSection = () => {
                 end: "200% top",
                 scrub: 1.5,
                 pin: true,
-                markers: true
+                // markers: true
             }
         });
 
