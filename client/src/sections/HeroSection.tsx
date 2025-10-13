@@ -70,7 +70,7 @@ const HeroSection = () => {
                 )}
                 <div className="hero-content opacity-0">
                     <div className="overflow-hidden">
-                        <h1 className="hero-title">Freaking Delicious</h1>
+                        <h1 className="hero-title lg:p-0 p-2">Freaking Delicious</h1>
                     </div>
                     <div className="hero-text-scroll">
                         <div className="hero-subtitle">
@@ -78,8 +78,8 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <h2>Live life to the fullest with SPYLT: Shatter boredom and embrace your inner kid with every deliciously smooth chug.</h2>
-                    <div className="hero-button">
-                        <p>Chug a SPYLT</p>
+                    <div className="hero-button hover:bg-[#e9aa56]">
+                        <a href="#">Chug a SPYLT</a>
                     </div>
                 </div>
             </div>
