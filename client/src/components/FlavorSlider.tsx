@@ -106,12 +106,12 @@ const FlavorSlider = () => {
     });
 
     return (
-        <div ref={slideRef} className="slider-wrapper lg:w-[480vw] lg:h-full mt-0 xl:mt-0 bg-milk">
-            <div className="flavors h-full flex md:flex-row flex-col items-center lg:items-start lg:pt-10 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap">
+        <div ref={slideRef} className="slider-wrapper lg:w-[480vw] lg:h-full mt-0 xl:mt-0 bg-milk h-[100%]">
+            <div className="flavors lg:pb-50 flex md:flex-row flex-col items-center lg:items-start lg:pt-10 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap">
                 {flavorlists.map((flavor) => (
                     <div
                         key={flavor.name}
-                        className={`relative z-30 lg:w-[50vw] w-96 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
+                        className={`relative z-30 lg:w-[50vw] w-88 lg:h-[70vh] md:w-[90vw] md:h-[50vh] h-80 flex-none ${flavor.rotation}`}
                     >
                         <img
                             src={getImage(`${flavor.color}-bg.svg`)}

@@ -3,13 +3,13 @@ import FlavorTitle from "../components/FlavorTitle";
 
 const FlavorSection = () => {
     return (
-        <section className="">
-            <div className="flavor-section">
-                <div className="h-dvh flex lg:flex-row flex-col relative">
-                    <div className="lg:w-[57%] flex-none h-80 lg:h-full  xl:mt-0">
+        <section className="flavor-section">
+            <div className="">
+                <div className="h-full flex lg:flex-row flex-col relative">
+                    <div className="lg:w-[57%] flex-none h-80 lg:h-full lg:mt-[15%]  xl:mt-0 lg:pb-50">
                         <FlavorTitle />
                     </div>
-                    <div className="h-full">
+                    <div>
                         <FlavorSlider />
                     </div>
                 </div>
