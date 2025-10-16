@@ -23,6 +23,9 @@ const FlavorSlider = () => {
     const isTablet = useMediaQuery({
         query: "(max-width: 1024px)",
     });
+    const isMob = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
 
     useGSAP(() => {
         //Card Slider animation (Horizontally)
@@ -42,10 +45,12 @@ const FlavorSlider = () => {
                 },
             });
 
-            tl.to(".flavor-section", {
-                x: `-${scrollAmount}px`,
+            tl.to(".flavor-scroll-inner", {
+                x: isMob ? 0 : `-${scrollAmount}px`,
+                y: isMob ? `${scrollAmount}px` : 0,
                 ease: "power1.inOut",
             });
+
         }
 
         //Title Animation
