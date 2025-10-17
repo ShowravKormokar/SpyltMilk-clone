@@ -9,7 +9,6 @@ const MessageSection = () => {
             const firstMsgSplit = SplitText.create(".first-message", { type: "words" });
             const secMsgSplit = SplitText.create(".second-message", { type: "words" });
             const paragraphSplit = SplitText.create(".message-content p", { type: "words,lines", linesClass: "paragraph-line" });
-            console.log(firstMsgSplit);
 
             gsap.to(firstMsgSplit.words, {
                 color: "#faeade",
