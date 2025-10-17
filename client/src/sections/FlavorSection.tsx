@@ -51,7 +51,7 @@ const FlavorSection = () => {
 
             ScrollTrigger.create({
                 trigger: ".flavor-section",
-                start: "top 90%",
+                start: "top 95%",
                 end: "bottom bottom",
                 onToggle: (self) => {
                     btn.style.position = self.isActive ? "fixed" : "absolute";
@@ -71,12 +71,12 @@ const FlavorSection = () => {
             {/* Fixed button (stays in bottom-center during scroll) */}
             <div
                 className={`${isMob ?
-                    "fixed-btn w-full fixed py-7 h-25 left-1/2 z-[100] flex justify-center bg-milk"
+                    "fixed-btn w-full fixed py-4 h-22 left-1/2 z-[100] flex justify-center bg-milk"
                     :
                     "absolute bottom-[10%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"
                     }`}
             >
-                <button type="button" className="text-md rounded-4xl bg-amber-400 px-8 py-2 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
+                <button type="button" className="text-sm rounded-4xl bg-[#e3a458] px-10 py-4 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
                     Get It Now
                 </button>
             </div>
