@@ -25,9 +25,16 @@ const VideoPin = () => {
 
     return (
         <div className="h-screen overflow-hidden ">
-            <div className="relative size-full video-box">
+            <div className="relative w-full h-screen video-box overflow-hidden">
                 <img src={getImage("circle-text.svg")} alt="" className="spin-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100 w-[15%]" />
-                <video src={pinVideo} playsInline muted loop autoPlay className=" absolute inset-0 object-cover" />
+                <video
+                    src={pinVideo}
+                    playsInline
+                    muted
+                    loop
+                    autoPlay
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-full object-cover"
+                />
             </div>
 
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:scale-100 scale-200 z-100">
