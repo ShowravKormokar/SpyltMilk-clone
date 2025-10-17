@@ -51,7 +51,7 @@ const FlavorSection = () => {
 
             ScrollTrigger.create({
                 trigger: ".flavor-section",
-                start: "top 95%",
+                start: "top 90%",
                 end: "bottom bottom",
                 onToggle: (self) => {
                     btn.style.position = self.isActive ? "fixed" : "absolute";
