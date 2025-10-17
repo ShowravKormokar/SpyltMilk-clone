@@ -35,7 +35,7 @@ const TestimonialSection = () => {
                 end: `${isMobile ? "200% top" : "200% top"}`,
                 scrub: 1.5,
                 pin: true,
-                markers: true,
+                // markers: true,
             }
         });
 
@@ -81,7 +81,7 @@ const TestimonialSection = () => {
                     <h1 className="text-black third-title tt-anim">Talking</h1>
                 </div>
                 {/* <div className=" relative w-full h-[112vh] border-2 border-amber-500"> */}
-                <div className="pin-box border-2 border-amber-600">
+                <div className="pin-box ">
                     {
                         cards.map((card, index) => (
                             <div
