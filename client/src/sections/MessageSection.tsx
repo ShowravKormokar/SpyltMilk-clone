@@ -51,12 +51,12 @@ const MessageSection = () => {
                 duration: 0.5,
                 clipPath: "polygon(0% 0%,100% 0%, 100% 100%, 0% 100%)",
                 ease: "circ.inOut"
-            }, "-<");
+            }, "<");
 
             const paragraphTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".message-content p",
-                    start: "top center",
+                    start: "top 60%",
                     // markers: true
                 }
             });
@@ -74,15 +74,15 @@ const MessageSection = () => {
     return (
         <section className="message-content">
             <div className="container mx-auto flex-center py-28 relative">
-                <div className="w-full h-full md:px-30">
+                <div className="w-full h-full md:px-30 ">
                     <div className="msg-wrapper">
-                        <h1 className="first-message">Stir up your fearless past and</h1>
-                        <div className="msg-text-scroll">
-                            <div className="bg-light-brown md:pb-5 pb-3 px-5">
+                        <h1 className="first-message text-wrap w-[80%]">Stir up your fearless past and</h1>
+                        <div className="msg-text-scroll md:mt-12 mt-0">
+                            <div className="bg-light-brown md:pb-4 pb-3 px-5">
                                 <h2 className="text-red-brown">Fuel Up</h2>
                             </div>
                         </div>
-                        <h1 className="second-message">your future with every gulp of Perfect Protein</h1>
+                        <h1 className="second-message md:w-full w-[70%]">your future with every gulp of Perfect Protein</h1>
                     </div>
                     <div className="flex-center md:mt-20 mt-10">
                         <div className="max-w-md px-10 flex-center overflow-hidden">
