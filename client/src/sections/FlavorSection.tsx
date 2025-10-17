@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FlavorSection = () => {
 
+    const flavorRef = useRef<HTMLDivElement | null>(null);
     const slideRef = useRef<HTMLDivElement | null>(null);
 
     const isTablet = useMediaQuery({
@@ -24,6 +25,7 @@ const FlavorSection = () => {
         if (!slideRef.current) return;
 
         const scrollAmount = slideRef.current.scrollWidth - window.innerWidth;
+        // const scrollAmountH = slideRef.current.scrollHeight - window.innerHeight;
 
         if (!isTablet) {
             const tl = gsap.timeline({
@@ -39,57 +41,41 @@ const FlavorSection = () => {
 
             tl.to(".flavor-scroll-inner", {
                 x: isMob ? 0 : `-${scrollAmount}px`,
-                y: isMob ? `${scrollAmount}px` : 0,
+                // y: isMob ? `${scrollAmount}px` : 0,
                 ease: "power1.inOut",
             });
+        };
+        if (isMob) {
+            const btn = document.querySelector(".fixed-btn") as HTMLElement | null;
+            if (!btn) return;
 
-        }
-    })
-    const flavorRef = useRef<HTMLDivElement | null>(null);
-    const btnMobile = useMediaQuery({ query: "(max-width: 768px)", });
-    // if (btnMobile) {
-    //     useGSAP(() => {
-    //         const btn = document.querySelector<HTMLDivElement>(".fixed-btn");
-    //         if (!btn) return;
-    //         const sliderCon = document.querySelector<HTMLDivElement>(".slider-con");
-    //         if (!sliderCon) return;
+            ScrollTrigger.create({
+                trigger: ".flavor-section",
+                start: "top 90%",
+                end: "bottom bottom",
+                onToggle: (self) => {
+                    btn.style.position = self.isActive ? "fixed" : "absolute";
+                    btn.style.bottom = "0%";
+                    btn.style.left = "50%";
+                    btn.style.transform = "translateX(-50%)";
+                },
+            });
 
-    //         if (!flavorRef.current) return;
+            return () => ScrollTrigger.killAll();
+        };
 
-    //         const hScrollAmount = flavorRef.current.scrollHeight - window.innerHeight;
-    //         // console.log(hScrollAmount);
-    //         gsap.to(".fixed-btn", {
-    //             opacity: 1,
-    //             scrollTrigger:
-    //             {
-    //                 trigger: ".flavor-section",
-    //                 start: "top 90%",
-    //                 // end: `2000px top`,
-    //                 end: `${hScrollAmount}px top`,
-    //                 // pin: true,
-    //                 onUpdate: (self) => {
-    //                     const progress = self.progress; // 0 to 1
-    //                     if (progress < 1) {
-    //                         btn.style.position = "fixed";
-    //                         btn.style.top = "90%";
-    //                         sliderCon.style.padding = "0%";
-    //                     } else {
-    //                         btn.style.position = "absolute";
-    //                         btn.style.bottom = "0%";
-    //                         sliderCon.style.padding = "5rem";
-    //                     }
-    //                 },
-    //                 markers: true,
-    //                 preventOverlaps: true
-    //             }
-    //         })
-    //     });
-    // }
+    });
+
     return (
         <section ref={flavorRef} className="flavor-section relative overflow-hidden">
             {/* Fixed button (stays in bottom-center during scroll) */}
             <div
-                className={`${btnMobile ? "opacity-0 fixed-btn w-full py-7 h-25 left-1/2 -translate-x-1/2 z-[100] flex justify-center bg-milk" : "absolute bottom-[5%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"}`}>
+                className={`${isMob ?
+                    "fixed-btn w-full fixed py-7 h-25 left-1/2 z-[100] flex justify-center bg-milk"
+                    :
+                    "absolute bottom-[5%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"
+                    }`}
+            >
                 <button type="button" className="text-md rounded-4xl bg-amber-400 px-8 py-2 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
                     Get It Now
                 </button>
@@ -99,10 +85,11 @@ const FlavorSection = () => {
                 <div className="lg:w-[57%] flex-none h-80 lg:h-full lg:mt-[9%] xl:mt-0 lg:pb-50">
                     <FlavorTitle />
                 </div>
-                <div ref={slideRef} className="lg:pb-0 slider-con">
+                <div ref={slideRef} className="lg:pb-0 pb-8 slider-con">
                     <FlavorSlider />
                 </div>
             </div>
+
         </section >
     );
 };
