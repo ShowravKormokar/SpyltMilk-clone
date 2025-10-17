@@ -45,6 +45,30 @@ const FlavorTitle = () => {
                 }
             });
         });
+
+        //Title Animation
+        const titleTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".flavor-section",
+                start: "top top",
+                end: "bottom 80%",
+                scrub: true,
+            },
+        });
+
+        titleTl
+            .to(".first-text-split", {
+                xPercent: -30,
+                ease: "power1.inOut",
+            })
+            .to(".flavor-text-scroll", {
+                xPercent: -22,
+                ease: "power1.inOut",
+            }, "<")
+            .to(".second-text-split", {
+                xPercent: -10,
+                ease: "power1.inOut",
+            }, "<");
     });
 
     return (
