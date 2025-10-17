@@ -238,7 +238,7 @@ body::-webkit-scrollbar {
 
         .vd-pin {
             .video-box {
-                clip-path: circle(6% at 50% 50%);
+                /* clip-path: circle(6% at 50% 50%); */
             }
 
             .play-btn {
