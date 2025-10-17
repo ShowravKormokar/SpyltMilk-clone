@@ -73,7 +73,7 @@ const BenifitSection = () => {
                 </div>
             </div>
 
-            <div className="vd-pin relative overlay-box -mt-52">
+            <div className="vd-pin relative overlay-box">
                 <VideoPin />
             </div>
         </section>
