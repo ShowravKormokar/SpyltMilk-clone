@@ -5,11 +5,12 @@ import mkcert from 'vite-plugin-mkcert'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/testing404/', // ✅ add GitHub repo name here
+  base: '/', // ✅ root path for Vercel
   plugins: [react(), tailwindcss(), mkcert()],
   server: {
+    https: true, // optional: allows https for local dev with mkcert
     hmr: {
-      overlay: false, // disables the error overlay in the browser
+      overlay: false, // disables browser error overlay
     },
   },
 })

@@ -76,7 +76,7 @@ const FlavorSection = () => {
                     "absolute bottom-[10%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"
                     }`}
             >
-                <button type="button" className="text-sm rounded-4xl bg-[#e3a458] px-10 py-4 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
+                <button type="button" className="text-sm rounded-4xl bg-[#e3a458] px-10 md:py-4 py-0 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
                     Get It Now
                 </button>
             </div>
