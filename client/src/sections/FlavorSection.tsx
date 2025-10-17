@@ -73,7 +73,7 @@ const FlavorSection = () => {
                 className={`${isMob ?
                     "fixed-btn w-full fixed py-7 h-25 left-1/2 z-[100] flex justify-center bg-milk"
                     :
-                    "absolute bottom-[5%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"
+                    "absolute bottom-[10%] left-1/2 -translate-x-1/2 z-[100] flex justify-center"
                     }`}
             >
                 <button type="button" className="text-md rounded-4xl bg-amber-400 px-8 py-2 cursor-pointer shadow-md hover:bg-amber-500 transition-all" >
