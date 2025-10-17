@@ -8,12 +8,12 @@ const VideoPin = () => {
     useGSAP(() => {
         const vpTl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".vd-pin",
+                trigger: ".vd-pin .video-wrapper",
                 start: "0px top",
                 end: "2500px top",
                 scrub: 1.5,
                 pin: true,
-                markers: true
+                // markers: true
             }
         });
 
@@ -25,15 +25,19 @@ const VideoPin = () => {
 
     return (
         <div className="h-screen overflow-hidden ">
-            <div className="relative w-full h-screen video-box overflow-hidden  border-2 border-blue-600">
-                <img src={getImage("circle-text.svg")} alt="" className="spin-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100 w-[15%]" />
+            <div className="relative w-full h-full video-box overflow-hidden">
+                <img
+                    src={getImage("circle-text.svg")}
+                    alt=""
+                    className="spin-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100 w-[15%]"
+                />
                 <video
                     src={pinVideo}
                     playsInline
                     muted
                     loop
                     autoPlay
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-full object-cover border-2 border-amber-600"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-full object-cover"
                 />
             </div>
 
