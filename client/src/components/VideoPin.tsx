@@ -8,7 +8,7 @@ const VideoPin = () => {
     useGSAP(() => {
         const vpTl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".vd-pin .video-wrapper",
+                trigger: ".video-wrapper",
                 start: "0px top",
                 end: "2500px top",
                 scrub: 1.5,

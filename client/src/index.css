@@ -108,7 +108,7 @@ body::-webkit-scrollbar {
         @apply bg-[#7f3b2d] text-milk min-h-dvh overflow-hidden flex justify-center items-center relative z-20;
 
         .msg-wrapper {
-            @apply  2xl:text-[8.5rem] md:text-[96px] text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-18 gap-14;
+            @apply 2xl:text-[8.5rem] md:text-[96px] text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] flex flex-col justify-center items-center md:gap-18 gap-14;
 
             h1:first-of-type {
                 @apply 2xl:max-w-4xl md:w-[90%] text-center text-[#faeade10];
@@ -236,11 +236,11 @@ body::-webkit-scrollbar {
             @apply rotate-[-5deg] md:-translate-y-12;
         }
 
-        .video-box {
-            clip-path: circle(6% at 50% 50%);
-        }
-
         .vd-pin {
+            .video-box {
+                clip-path: circle(6% at 50% 50%);
+            }
+
             .play-btn {
                 @apply absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
             }
