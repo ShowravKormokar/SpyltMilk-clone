@@ -17,10 +17,14 @@ const VideoPin = () => {
             }
         });
 
-        vpTl.to(".video-box", {
-            // clipPath: "circle(100% at 50% 50%)",
-            ease: "power1.inOut",
-        });
+        vpTl.fromTo(
+            ".video-box",
+            { clipPath: "circle(6% at 50% 50%)" },
+            {
+                clipPath: "circle(100% at 50% 50%)",
+                ease: "power1.inOut",
+            }
+        );
     });
 
     return (
@@ -46,7 +50,7 @@ const VideoPin = () => {
                     <img src={getImage("play.svg")} alt="" className="size-[3vw] ml-[0.5vw]" />
                 </div>
             </div>
-        </div >
+        </div>
     )
 };
 
