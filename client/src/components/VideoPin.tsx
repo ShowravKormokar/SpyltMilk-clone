@@ -2,29 +2,35 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { getImage } from '../utils/media';
 import pinVideo from "../assets/videos/pin-video.mp4"
+import { useMediaQuery } from "react-responsive";
 
 const VideoPin = () => {
+
+    const vidMob = useMediaQuery({
+        query: "(max-width:768px)",
+    })
 
     useGSAP(() => {
         const vpTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".video-wrapper",
                 start: "0px top",
-                end: "2500px top",
+                end: `${vidMob ? "1300px top" : "2500px top"}`,
                 scrub: 1.5,
                 pin: true,
                 // markers: true
             }
         });
-
-        vpTl.fromTo(
-            ".video-box",
-            { clipPath: "circle(6% at 50% 50%)" },
-            {
-                clipPath: "circle(100% at 50% 50%)",
-                ease: "power1.inOut",
-            }
-        );
+        if (!vidMob) {
+            vpTl.fromTo(
+                ".video-box",
+                { clipPath: "circle(6% at 50% 50%)" },
+                {
+                    clipPath: "circle(100% at 50% 50%)",
+                    ease: "power1.inOut",
+                }
+            );
+        }
     });
 
     return (
@@ -33,7 +39,7 @@ const VideoPin = () => {
                 <img
                     src={getImage("circle-text.svg")}
                     alt=""
-                    className="spin-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100 w-[15%]"
+                    className="spin-circle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100 md:w-[15%] w-[30%] h-auto"
                 />
                 <video
                     src={pinVideo}

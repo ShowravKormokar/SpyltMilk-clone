@@ -13,7 +13,7 @@ const ClipPathTitle = ({
     borderColor?: string;
 }) => {
     return (
-        <div className="general-title">
+        <div className="2xl:text-[8.5rem] md:text-8xl text-[40px] font-bold uppercase leading-[9vw] tracking-[-.35vw]">
             <div
                 style={{ clipPath: "polygon(50% 0%, 50% 0,50% 100%, 50% 100%)", borderColor: borderColor }}
                 className={`${className} border-[.5vw] text-nowrap opacity-0`}>
