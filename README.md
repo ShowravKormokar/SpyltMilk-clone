@@ -43,7 +43,38 @@ I recreated it to sharpen my animation and modern web development skills — exp
 ```bash
 git clone https://github.com/ShowravKormokar/SpyltMilk-clone.git
 cd SpyltMilk-clone/client
-### 💻 Install Dependencies
 
+---
+
+### 2. Install dependencies
 ```bash
 npm install
+
+---
+
+### 2. Install dependencies
+```bash
+npm install
+
+---
+
+### 3. Run development server
+```bash
+npm run dev
+
+---
+
+The app will run on https://localhost:5173 (with HTTPS if mkcert is configured).
+
+## 🚀 Deployment
+This project is continuously deployed on Vercel . Whenever changes are pushed to the main branch on GitHub, Vercel automatically rebuilds and redeploys the latest version.
+
+## ✨ Features
+🎬 Smooth GSAP scroll-based animations 📱 Fully responsive layout 🎨 Tailwind CSS for fast and clean styling ⚡ Built with Vite for blazing-fast performance 🔄 Continuous deployment via Vercel
+
+## 📄 License
+This project is for learning and showcase purposes only — not for commercial use. All original design credits go to Tubik Studio and Spylt.com
+
+---
+
+👨‍💻 Developed by Showrav Kormokar
