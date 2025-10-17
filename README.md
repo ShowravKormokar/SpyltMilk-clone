@@ -43,26 +43,22 @@ I recreated it to sharpen my animation and modern web development skills — exp
 ```bash
 git clone https://github.com/ShowravKormokar/SpyltMilk-clone.git
 cd SpyltMilk-clone/client
-
----
-
-### 2. Install dependencies
-```bash
-npm install
-
----
+```
 
 ### 2. Install dependencies
 ```bash
 npm install
+```
 
----
+### 2. Install dependencies
+```bash
+npm install
+```
 
 ### 3. Run development server
 ```bash
 npm run dev
-
----
+```
 
 The app will run on https://localhost:5173 (with HTTPS if mkcert is configured).
 
@@ -75,6 +71,4 @@ This project is continuously deployed on Vercel . Whenever changes are pushed to
 ## 📄 License
 This project is for learning and showcase purposes only — not for commercial use. All original design credits go to Tubik Studio and Spylt.com
 
----
-
-👨‍💻 Developed by Showrav Kormokar
+## 👨‍💻 Developed by Showrav Kormokar
