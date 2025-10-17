@@ -2,8 +2,13 @@ import { cards } from "../constants/details";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
+import { useMediaQuery } from "react-responsive";
 
 const TestimonialSection = () => {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
+
     // Refs to multiple video elements
     const vdRf = useRef<HTMLVideoElement[]>([]);
 
@@ -16,11 +21,30 @@ const TestimonialSection = () => {
             scrollTrigger: {
                 trigger: ".testimonials-section",
                 start: "top bottom",
-                end: "500% top",
+                end: `${isMobile ? "150% top" : "500% top"}`,
                 scrub: true,
                 // markers: true
+                pinSpacing: false
             }
         });
+
+        const pinTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: `${isMobile ? ".testimonials-section" : ".testimonials-section"}`,
+                start: `${isMobile ? "5% top" : "10% top"}`,
+                end: `${isMobile ? "200% top" : "200% top"}`,
+                scrub: 1.5,
+                pin: true,
+                markers: true,
+            }
+        });
+
+        pinTl.from(".vd-card", {
+            // opacity: 0,
+            yPercent: 500,
+            stagger: 0.2,
+            ease: "power1.inOut"
+        }, "<");
 
         tesTl.to(".testimonials-section .ft-anim", {
             xPercent: 70 + 30,
@@ -29,24 +53,9 @@ const TestimonialSection = () => {
             xPercent: 25 + 30, yPercent: -100
         }, "<").to(".testimonials-section .tt-anim", {
             xPercent: -80, yPercent: -100
-        }, "<");
-
-        const pinTl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".testimonials-section",
-                start: "10% top",
-                end: "200% top",
-                scrub: 1.5,
-                pin: true,
-                // markers: true
-            }
+        }, "<").to(".testimonials-section .all-title", {
+            yPercent: -100
         });
-
-        pinTl.from(".vd-card", {
-            yPercent: 150,
-            stagger: 0.2,
-            ease: "power1.inOut"
-        })
     });
 
     const setVideoRef = (el: HTMLVideoElement | null, index: number): void => {
@@ -65,30 +74,36 @@ const TestimonialSection = () => {
 
     return (
         <section className="testimonials-section">
-            <div className="h-[150vh] absolute size-full flex flex-col items-center pt-[5vw]">
-                <h1 className="text-black first-title ft-anim">What's</h1>
-                <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
-                <h1 className="text-black third-title tt-anim">Talking</h1>
-            </div>
-
-            <div className="pin-box">
-                {
-                    cards.map((card, index) => (
-                        <div
-                            key={index}
-                            className={`vd-card ${card.translation} ${card.rotation}`}
-                            onMouseEnter={() => handlePlay(index)}
-                            onMouseLeave={() => handlePause(index)}
-                        >
-                            <video
+            <div className="relative w-full lg:h-[130vh] h-[112vh]">
+                <div className="all-title lg:h-[150vh] h-full absolute size-full flex flex-col items-center pt-[5vw]">
+                    <h1 className="text-black first-title ft-anim">What's</h1>
+                    <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
+                    <h1 className="text-black third-title tt-anim">Talking</h1>
+                </div>
+                {/* <div className=" relative w-full h-[112vh] border-2 border-amber-500"> */}
+                <div className="pin-box border-2 border-amber-600">
+                    {
+                        cards.map((card, index) => (
+                            <div
                                 key={index}
-                                ref={(el) => setVideoRef(el, index)}
-                                src={card.src} playsInline muted loop
-                                className="size-full object-cover"
-                            />
-                        </div>
-                    ))
-                }
+                                className={`vd-card  ${card.translation} ${card.rotation}`}
+                                onMouseEnter={() => handlePlay(index)}
+                                onMouseLeave={() => handlePause(index)}
+                            >
+                                <video
+                                    key={index}
+                                    ref={(el) => setVideoRef(el, index)}
+                                    src={card.src} playsInline muted loop
+                                    className="size-full object-cover"
+                                />
+                            </div>
+                        ))
+                    }
+                    {/* </div> */}
+                </div>
+            </div>
+            <div className="absolute bottom-15 w-full h-auto py-2 flex justify-center items-center z-100">
+                <button type="button" className="bg-[#e3a458] px-10 py-4 rounded-4xl">Explore All</button>
             </div>
         </section >
     );

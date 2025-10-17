@@ -258,13 +258,13 @@ body::-webkit-scrollbar {
     }
 
     .testimonials-section {
-        @apply bg-milk relative w-full h-[130vh];
+        @apply bg-milk relative w-full lg:h-[130vh] h-[110vh];
 
         .pin-box {
-            @apply flex items-center justify-center md:gap-12 w-full ps-52 absolute 2xl:bottom-32 bottom-[20vh];
+            @apply flex items-center justify-center md:gap-12 w-full ps-52 absolute 2xl:bottom-32 md:top-0 top-20 bottom-[5vh];
 
             .vd-card {
-                @apply w-70 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden md:relative absolute border-[.5vw] border-milk;
+                @apply md:w-70 w-65 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden md:relative absolute border-[.5vw] border-milk;
             }
         }
 
