@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
                 alt="navbar-logo"
                 className="md:w-18 w-20 nav-logo"
             />
-            <div className="p-1 backdrop-blur-xl rounded-full menu-hover">
+            <div className="p-1 backdrop-blur-xl rounded-full menu-hover lg:inline-block hidden">
                 <i className="ri-menu-5-line text-[#523122] text-2xl"></i>
             </div>
             <div className="px-6 py-2 bg-[#f3e2d5] rounded-3xl hover:bg-[#e9aa56] text-center">
