@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
 import { useMediaQuery } from "react-responsive";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TestimonialSection = () => {
     const isMobile = useMediaQuery({
@@ -78,7 +79,6 @@ const TestimonialSection = () => {
                     <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
                     <h1 className="text-black third-title tt-anim">Talking</h1>
                 </div>
-                {/* <div className=" relative w-full h-[112vh] border-2 border-amber-500"> */}
                 <div className="pin-box ">
                     {
                         cards.map((card, index) => (
@@ -97,7 +97,6 @@ const TestimonialSection = () => {
                             </div>
                         ))
                     }
-                    {/* </div> */}
                 </div>
             </div>
             <div className="absolute bottom-20 w-full h-auto py-2 flex justify-center items-center z-100">
