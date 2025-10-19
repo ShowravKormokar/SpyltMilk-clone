@@ -25,7 +25,7 @@ const FooterSection = () => {
                     start: `${isMobF ? "top 60%" : "top 50%"}`,
                     end: `${isMobF ? "top 20%" : "top 10%"}`,
                     scrub: 1.5,
-                    markers: true
+                    // markers: true
                 }
             });
         });
