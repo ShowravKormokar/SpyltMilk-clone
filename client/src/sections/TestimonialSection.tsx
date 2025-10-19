@@ -14,14 +14,14 @@ const TestimonialSection = () => {
 
     useGSAP(() => {
         gsap.set(".testimonials-section", {
-            marginTop: "-140vh"
+            marginTop: "-100vh"
         });
 
         const tesTl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".testimonials-section",
                 start: "top bottom",
-                end: `${isMobile ? "150% top" : "500% top"}`,
+                end: `${isMobile ? "100% top" : "500% top"}`,
                 scrub: true,
                 // markers: true
                 pinSpacing: false
@@ -30,9 +30,9 @@ const TestimonialSection = () => {
 
         const pinTl = gsap.timeline({
             scrollTrigger: {
-                trigger: `${isMobile ? ".testimonials-section" : ".testimonials-section"}`,
-                start: `${isMobile ? "5% top" : "10% top"}`,
-                end: `${isMobile ? "200% top" : "200% top"}`,
+                trigger: ".testimonials-section",
+                start: `${isMobile ? "1% top" : "10% top"}`,
+                end: `${isMobile ? "100% top" : "200% top"}`,
                 scrub: 1.5,
                 pin: true,
                 // markers: true,
@@ -41,8 +41,8 @@ const TestimonialSection = () => {
 
         pinTl.from(".vd-card", {
             // opacity: 0,
-            yPercent: 500,
-            stagger: 0.2,
+            yPercent: 300,
+            stagger: 0.3,
             ease: "power1.inOut"
         }, "<");
 
@@ -53,9 +53,7 @@ const TestimonialSection = () => {
             xPercent: 25 + 30, yPercent: -100
         }, "<").to(".testimonials-section .tt-anim", {
             xPercent: -80, yPercent: -100
-        }, "<").to(".testimonials-section .all-title", {
-            yPercent: -100
-        });
+        }, "<");
     });
 
     const setVideoRef = (el: HTMLVideoElement | null, index: number): void => {
@@ -75,7 +73,7 @@ const TestimonialSection = () => {
     return (
         <section className="testimonials-section">
             <div className="relative w-full lg:h-[130vh] h-[112vh]">
-                <div className="all-title lg:h-[150vh] h-full absolute size-full flex flex-col items-center pt-[5vw]">
+                <div className="all-title lg:h-[150vh] h-full absolute size-full flex flex-col items-center lg:pt-[5vw] pt-[15vw]">
                     <h1 className="text-black first-title ft-anim">What's</h1>
                     <h1 className="text-light-brown sec-title st-anim">Everyone</h1>
                     <h1 className="text-black third-title tt-anim">Talking</h1>
@@ -102,7 +100,7 @@ const TestimonialSection = () => {
                     {/* </div> */}
                 </div>
             </div>
-            <div className="absolute bottom-15 w-full h-auto py-2 flex justify-center items-center z-100">
+            <div className="absolute bottom-20 w-full h-auto py-2 flex justify-center items-center z-100">
                 <button type="button" className="bg-[#e3a458] px-10 py-4 rounded-4xl">Explore All</button>
             </div>
         </section >

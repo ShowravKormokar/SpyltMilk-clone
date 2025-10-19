@@ -33,12 +33,12 @@ const VideoPin = () => {
         } else {
             gsap.to(".video-wrapper", {
                 scrollTrigger: {
-                    trigger: ".video-wrapper",
+                    trigger: ".vd-pin",
                     start: "0px top",
-                    end: "200% top",
+                    end: "120% top",
                     scrub: 1.5,
                     pin: true,
-                    markers: true
+                    // markers: true
                 }
             })
         }
