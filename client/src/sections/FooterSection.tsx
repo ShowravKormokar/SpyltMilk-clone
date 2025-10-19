@@ -3,8 +3,13 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { getImage } from '../utils/media';
 import splash from "../assets/videos/splash.mp4"
+import { useMediaQuery } from "react-responsive";
 
 const FooterSection = () => {
+
+    const isMobF = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
 
     useGSAP(() => {
         document.fonts.ready.then(() => {
@@ -17,25 +22,30 @@ const FooterSection = () => {
                 zIndex: 0,
                 scrollTrigger: {
                     trigger: ".footer-section",
-                    start: "top 50%",
-                    end: "top 10%",
+                    start: `${isMobF ? "top 60%" : "top 50%"}`,
+                    end: `${isMobF ? "top 20%" : "top 10%"}`,
                     scrub: 1.5,
-                    // markers: true
+                    markers: true
                 }
             });
         });
     });
 
     return (
-        <section className="footer-section pt-20">
+        <section className="footer-section lg:pt-20">
 
-            <div className="2xl:h-[110dvh] relative z-100 pt-[8vh]">
+            <div className="2xl:h-[110dvh] relative z-100 lg:pt-[8vh] pt-[8vh]">
                 <div className="overflow-hidden">
-                    <h1 className="general-title text-center text-milk footer-title-animation">#CHUGRESPONSIBLY</h1>
+                    <h1 className="general-title text-center text-milk footer-title-animation lg:pb-0 pb-5">#CHUGRESPONSIBLY</h1>
                 </div>
             </div>
+            {
+                isMobF ?
+                    <img src={getImage("footer-drink.png")} alt="footer img" className="absolute object-contain top-0 mix-blend-lighten z-10 opacity-90" />
+                    :
+                    <video src={splash} autoPlay playsInline muted className="absolute object-contain top-[-4%] mix-blend-lighten z-10 opacity-90" />
+            }
 
-            <video src={splash} autoPlay playsInline muted className="absolute object-contain top-[-4%] mix-blend-lighten z-10 opacity-90" />
 
             <div className="flex-center gap-3 relative z-10 md:mt-10 mt-5">
                 <div className="social-btn">
@@ -49,7 +59,7 @@ const FooterSection = () => {
                 </div>
             </div>
 
-            <div className="mt-30 mb-32 md:px-7 px-5 flex gap-10 md:flex-row flex-col justify-between items-start text-milk font-paragraph md:text-sm font-medium">
+            <div className="mt-30 lg:mb-32 mb-20 md:px-7 px-5 flex gap-10 md:flex-row flex-col justify-between items-start text-milk font-paragraph md:text-sm font-medium">
                 <div className="flex items-start md:gap-10 gap-5">
                     <div>
                         <p>SPYLT Flavors</p>

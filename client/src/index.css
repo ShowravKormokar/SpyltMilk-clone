@@ -281,7 +281,7 @@ body::-webkit-scrollbar {
         }
 
         input {
-            @apply 2xl:text-4xl text-3xl placeholder:font-bold placeholder:tracking-tighter;
+            @apply 2xl:text-4xl md:text-3xl text-2xl placeholder:font-bold placeholder:tracking-tighter;
         }
 
         .copyright-box {
