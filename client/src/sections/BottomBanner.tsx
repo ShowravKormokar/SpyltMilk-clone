@@ -36,11 +36,11 @@ const BottomBanner = () => {
 
 
     return (
-        <section className="bottom-banner 2xl:min-h-dvh overflow-hidden relative bg-[#222123] flex flex-col justify-center items-start">
+        <section className="bottom-banner 2xl:min-h-dvh lg:w-full w-[200%] h-full overflow-hidden relative bg-[#222123] flex flex-col justify-center items-start">
             <img src={getImage("footer-dip.png")} alt="footer-img" className="w-full object-cover -translate-y-1" />
             <img src={getImage("bottom-banner.svg")} alt="" className="h-fit mt-10" />
 
-            <div className="absolute w-[35rem] h-[24rem] z-100 top-[30%] left-20">
+            <div className="absolute w-[35rem] h-[24rem] z-100 lg:top-[30%] top-[50%] lg:left-20 left-10">
                 <div className="relative inline-block md:translate-y-20 z-100">
                     <div className="general-title relative flex flex-col justify-center items-center gap-24">
                         <div className="overflow-hidden place-self-start">
@@ -52,9 +52,9 @@ const BottomBanner = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-10 text-[#f3e2d5] text-sm font-paragraph flex flex-col gap-14">
+                    <div className="lg:mt-10 mt-2 text-[#f3e2d5] text-sm font-paragraph flex flex-col lg:gap-14 gap-8">
                         <div>
-                            <p className=" w-1/2">Buy our drinks at your local store or get them delivered (to your door).</p>
+                            <p className=" lg:w-1/2 w-[80%]">Buy our drinks at your local store or get them delivered (to your door).</p>
                         </div>
                         <div className="font-medium">
                             <a href="#" className="px-10 py-4 rounded-4xl bg-black text-[#f3e2d5]">FIND IN STORES</a>
