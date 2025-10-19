@@ -3,7 +3,6 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
 import { useMediaQuery } from "react-responsive";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const TestimonialSection = () => {
     const isMobile = useMediaQuery({
@@ -22,7 +21,7 @@ const TestimonialSection = () => {
             scrollTrigger: {
                 trigger: ".testimonials-section",
                 start: "top bottom",
-                end: `${isMobile ? "100% top" : "500% top"}`,
+                end: `${isMobile ? "80% top" : "500% top"}`,
                 scrub: true,
                 // markers: true
                 pinSpacing: false
