@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import preImg from "../assets/images/nav-logo.svg"
 
 const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
     const [progress, setProgress] = useState(0);
@@ -77,7 +78,6 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
         };
     }, []);
 
-    // Use GSAP only when both progress >= 100 and minimum time elapsed
     useGSAP(() => {
         if (progress >= 100 && canHide) {
             gsap.to(".preloader", {
@@ -90,15 +90,16 @@ const PreLoader = ({ onComplete }: { onComplete: () => void }) => {
     }, [progress, canHide, onComplete]);
 
     return (
-        <div className="preloader fixed inset-0 flex flex-col items-center justify-center z-[9999] text-white bg-[#7f3b2d]">
-            <h1 className="text-2xl font-bold tracking-widest">SPYLT MILK</h1>
-            <div className="mt-6 w-64 h-2 bg-gray-700 rounded-full overflow-hidden">
+        <div className="preloader fixed inset-0 flex flex-col items-center justify-end pb-20 z-[9999] text-white bg-[#7f3b2d]">
+            {/* <h1 className="text-7xl font-bold tracking-widest lg:mb-30">SPYLT MILK</h1> */}
+            <img src={preImg} alt="pre img" className="lg:mb-40 mb-[60%] lg:w-[20%] w-[40%]" />
+            <p className="lg:text-[2rem] text-[1.5rem] tracking-wider">{progress}%</p>
+            <div className="mt-2 lg:w-[12rem] w-64 h-1 bg-gray-700 rounded-full overflow-hidden">
                 <div
                     className="h-full bg-white transition-all duration-150 ease-linear"
                     style={{ width: `${progress}%` }}
                 />
             </div>
-            <p className="mt-4 text-sm tracking-wider">{progress}%</p>
         </div>
     );
 };
