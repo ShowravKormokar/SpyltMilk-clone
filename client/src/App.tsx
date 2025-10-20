@@ -12,38 +12,51 @@ import FooterSection from "./sections/FooterSection";
 import BottomBanner from "./sections/BottomBanner";
 import "remixicon/fonts/remixicon.css";
 import TestimonialSection from "./sections/TestimonialSection";
+import PreLoader from "./components/PreLoader";
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const App = () => {
+    const [loaded, setLoaded] = useState(false);
 
     useGSAP(() => {
-        ScrollSmoother.create({
-            smooth: 2,
-            effects: true,
-        });
-    });
+        if (loaded && !ScrollSmoother.get()) {
+            ScrollSmoother.create({
+                wrapper: "#smooth-wrapper",
+                content: "#smooth-content",
+                smooth: 1.5,
+                effects: true,
+            });
+            ScrollTrigger.refresh();
+        }
+    }, [loaded]);
 
     return (
         <main>
-            <Navbar />
-            <div id="smooth-wrapper">
-                <div id="smooth-content">
-                    <HeroSection />
-                    <MessageSection />
-                    <FlavorSection />
-                    <NutritionSection />
-                    <div>
-                        <BenifitSection />
-                        <TestimonialSection />
+            {!loaded && <PreLoader onComplete={() => setLoaded(true)} />}
+
+            {loaded && (
+                <>
+                    <Navbar />
+                    <div id="smooth-wrapper">
+                        <div id="smooth-content">
+                            <HeroSection />
+                            <MessageSection />
+                            <FlavorSection />
+                            <NutritionSection />
+                            <div>
+                                <BenifitSection />
+                                <TestimonialSection />
+                            </div>
+                            <BottomBanner />
+                            <FooterSection />
+                        </div>
                     </div>
-                    <BottomBanner />
-                    <FooterSection />
-                    {/* <div className="h-dvh border border-red-400"></div> */}
-                </div>
-            </div>
+                </>
+            )}
         </main>
-    )
-}
+    );
+};
 
 export default App
