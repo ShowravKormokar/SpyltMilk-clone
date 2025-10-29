@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { getImage } from '../utils/media';
+import NavMenu from "./NavMenu";
 
 const Navbar: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     useGSAP(() => {
         const els = Array.from(document.querySelectorAll<HTMLElement>(".nav-logo, .menu-hover"));
         if (!els.length) return;
@@ -25,7 +28,6 @@ const Navbar: React.FC = () => {
             el.addEventListener("mousemove", onMove);
             el.addEventListener("mouseleave", onLeave);
 
-            // push disposer for cleanup
             disposers.push(() => {
                 el.removeEventListener("mousemove", onMove);
                 el.removeEventListener("mouseleave", onLeave);
@@ -36,21 +38,35 @@ const Navbar: React.FC = () => {
     });
 
     return (
-        <nav className="fixed top-0 left-0 z-50 flex items-center justify-between md:p-6 p-3 w-full bg-transparent">
-            <img
-                src={getImage("nav-logo.svg")}
-                alt="navbar-logo"
-                className="md:w-18 w-20 nav-logo"
-            />
-            <div className="p-1 backdrop-blur-xl rounded-full menu-hover lg:inline-block hidden">
-                <i className="ri-menu-5-line text-[#523122] text-2xl"></i>
+        <>
+            <nav className="fixed top-0 left-0 z-50 flex items-center justify-between md:p-6 p-3 w-full bg-transparent">
+                <img
+                    src={getImage("nav-logo.svg")}
+                    alt="navbar-logo"
+                    className="md:w-18 w-20 nav-logo"
+                />
+
+                <div className="px-6 py-2 bg-[#f3e2d5] rounded-3xl hover:bg-[#e9aa56] text-center">
+                    <a href="#" className="text-[#523122] text-sm font-semibold p-0 m-0">
+                        FIND STORES
+                    </a>
+                </div>
+            </nav>
+
+            {/* NavMenu receives isOpen */}
+            <div
+                className="p-1 backdrop-blur-xl rounded-full menu-hover lg:inline-block hidden cursor-pointer fixed top-6 left-1/2 transform -translate-x-1/2 z-[1000]"
+
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+            >
+                {isMenuOpen ? (
+                    <i className="ri-close-fill text-[#523122] text-2xl"></i>
+                ) : (
+                    <i className="ri-menu-5-line text-[#523122] text-2xl"></i>
+                )}
             </div>
-            <div className="px-6 py-2 bg-[#f3e2d5] rounded-3xl hover:bg-[#e9aa56] text-center">
-                <a href="#" className="text-[#523122] text-sm font-semibold p-0 m-0">
-                    FIND STORES
-                </a>
-            </div>
-        </nav>
+            <NavMenu isOpen={isMenuOpen} />
+        </>
     );
 };
 

@@ -14,7 +14,6 @@ import "remixicon/fonts/remixicon.css";
 import TestimonialSection from "./sections/TestimonialSection";
 import PreLoader from "./components/PreLoader";
 import { useState } from "react";
-import NavMenu from "./components/NavMenu";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -42,7 +41,6 @@ const App = () => {
                     <Navbar />
                     <div id="smooth-wrapper">
                         <div id="smooth-content">
-                            <NavMenu />
                             <HeroSection />
                             <MessageSection />
                             <FlavorSection />
