@@ -79,7 +79,7 @@ body::-webkit-scrollbar {
             }
 
             .hero-text-scroll {
-                clip-path: "polygon(50% 0,50% 0,50% 100%, 50% 100%";
+                clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
             }
 
             .hero-text-scroll {
@@ -237,10 +237,6 @@ body::-webkit-scrollbar {
         }
 
         .vd-pin {
-            .video-box {
-                clip-path: (6% at 50% 50%) !important;
-            }
-
             .play-btn {
                 @apply absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full;
             }
