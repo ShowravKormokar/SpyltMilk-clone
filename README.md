@@ -9,6 +9,8 @@ Built to demonstrate my skills in **React**, **Tailwind CSS**, and **GSAP animat
 
 ## 📸 Project Preview
 ![SpyltMilk Clone Screenshot](https://github.com/ShowravKormokar/SpyltMilk-clone/blob/main/client/src/assets/images/Final.png?raw=true)
+<img width="1267" height="792" alt="Macbook-Air-spylt-clone-pi vercel app" src="https://github.com/user-attachments/assets/c40add88-400d-434f-b63f-eb497d72e433" />
+
 
 ---
 
